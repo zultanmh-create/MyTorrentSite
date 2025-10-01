@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/styles/update.css">
+  <link rel="stylesheet" href="/styles/body.css">
+  
+  <!-- Component CSS Files -->
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/search-bar.css">
+  <link rel="stylesheet" href="/styles/news.css">
+  <link rel="stylesheet" href="/styles/left&right.css">
+  <link rel="stylesheet" href="/styles/announcements.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  
+  <!-- JavaScript -->
+  <script defer src="/scripts/script.js"></script>
+  <script defer src="/scripts/update.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <%- include('partials/header.ejs') %>
+
+
+  <!-- Search Bar -->
+  <%- include ('partials/search-bar') %>
+
+  <!-- News Section -->
+  <%- include ('partials/news') %>
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="content-wrapper">
+      
+      <!-- Left Sidebar: Categories -->
+      <%- include ('partials/left-sidebar') %>
+      
+      <!-- Central Content Area -->
+      <div class="content-area">
+        
+        <!-- Announcements Section -->
+        <%- include ('partials/announcements') %>
+        
+        <!-- Popular Movie Torrents Section -->
+        
+        <!-- Content Area -->
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- Rules Box -->
+            <section class="rules-box">
+                <h2>Upload Rules</h2>
+                <ul>
+                    <li>All uploads must be original content or properly sourced</li>
+                    <li>Strictly no illegal or copyrighted material</li>
+                    <li>Descriptive titles required (e.g., "Movie Name (Year) [Quality] [Language]")</li>
+                    <li>Maintain seeding for at least 72 hours or 1:1 ratio</li>
+                    <li>Respect community guidelines and members</li>
+                </ul>
+            </section>
+        
+            <!-- Upload Box -->
+            <section class="upload-box">
+                <h2>Upload Torrent</h2>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Torrent Name:</label>
+                        <input type="text" id="name" name="name" required 
+                            placeholder="Example: Avatar (2009) [4K REMUX] [Dual Audio]">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="link">Torrent File/Link:</label>
+                        <div class="torrent-inputs">
+                            <input type="file" id="torrent_file" name="torrent_file" 
+                                accept=".torrent">
+                            <input type="text" id="torrent_link" name="torrent_link" 
+                                placeholder="Paste magnet URI (e.g., magnet:?xt=urn:...)">
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="category">📦 Category:</label>
+                        <select id="category" name="category" required>
+                            <option value="" selected disabled>Select Content Type</option>
+                            <option value="movies">🎬 Movies</option>
+                            <option value="tvshows">📺 TV Shows</option>
+                            <option value="applications">💻 Applications</option>
+                            <option value="games">🎮 Games</option>
+                            <option value="music">🎵 Music</option>
+                            <option value="anime">🇯🇵 Anime</option>
+                            <option value="books">📚 Books</option>
+                            <option value="documentaries">🌍 Documentaries</option>
+                            <option value="other">❓ Other</option>
+                        </select>
+                    </div>
+        
+                    <!-- Language Group -->
+                    <div class="form-group" id="language-group" style="display: none;">
+                        <label>🌐 Language(s):</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="language[]" value="english"> English</label>
+                            <label><input type="checkbox" name="language[]" value="hindi"> Hindi</label>
+                            <label><input type="checkbox" name="language[]" value="multi"> Multi-language</label>
+                            <label><input type="checkbox" name="language[]" value="other"> Other</label>
+                        </div>
+                    </div>
+        
+                    <!-- Caption Group -->
+                    <div class="form-group" id="caption-group" style="display: none;">
+                        <label>🔤 Caption(s):</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="caption[]" value="english"> English</label>
+                            <label><input type="checkbox" name="caption[]" value="hindi"> Hindi</label>
+                            <label><input type="checkbox" name="caption[]" value="multi"> Multi-language</label>
+                            <label><input type="checkbox" name="caption[]" value="other"> Other</label>
+                        </div>
+                    </div>
+        
+                    <!-- Quality Group -->
+                    <div class="form-group" id="quality-group" style="display: none;">
+                        <label for="quality">🎚️ Quality:</label>
+                        <select id="quality" name="quality">
+                            <option value="audio">MP3 (Audio)</option>
+                            <option value="sd">SD (480p)</option>
+                            <option value="hd">HD (720p)</option>
+                            <option value="fhd">Full HD (1080p)</option>
+                            <option value="uhd">Ultra HD (4K)</option>
+                            <option value="8k">8K UHD</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="description">📝 Description:</label>
+                        <textarea id="description" name="description" rows="6" required
+                            placeholder="Include details about:
+        - File contents
+        - Source information
+        - Technical specifications
+        - Any special requirements"></textarea>
+                    </div>
+        
+                    <button type="submit">🚀 Upload Torrent</button>
+                </form>
+            </section>
+        </div>
+          
+        
+        <!-- Other sections... -->
+        
+      </div>
+      
+      <!-- Right Sidebar: Quick Links -->
+      <%- include ('partials/quick-links') %>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <%- include ('partials/footer') %>
+
+  <script src="/public/scripts/script.js"></script>
+
+</body>
+</html>

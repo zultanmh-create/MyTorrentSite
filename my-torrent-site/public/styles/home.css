@@ -1,0 +1,325 @@
+/* --------------------------
+   THEME VARIABLES
+--------------------------- */
+/* Light Theme */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #FFA500;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --hover-color: #e59400;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --se-color: #28a745;
+  --le-color: #dc3545;
+  --row-even: #f8f9fa;
+  --icon-color: #007BFF;
+  --category-header-bg: #f8f9fa;
+  --table-header-bg: #007BFF;
+  --table-header-text: #ffffff;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --primary-color: #1a73e8;
+  --secondary-color: #ff9900;
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --hover-color: #ffb733;
+  --border-color: #444444;
+  --shadow-color: rgba(0, 0, 0, 0.7);
+  --row-even: #1a1a1a;
+  --icon-color: #ff9900;
+  --category-header-bg: #1a1a1a;
+  --table-header-bg: #1a1a1a;
+  --table-header-text: #ffffff;
+}
+
+/* --------------------------
+   GLOBAL STYLES
+--------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main page containers */
+#games-page,
+#torrents-page {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* --------------------------
+   CATEGORY BOX & HEADER
+--------------------------- */
+.category-box,
+#games-search-results,
+#popular-movies,
+#popular-tv,
+#popular-apps,
+#popular-games {
+  background: var(--background-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.category-header,
+#games-header-box,
+#movies-header-box,
+#tv-header-box,
+#apps-header-box,
+#games-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--category-header-bg);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.category-header h2,
+#games-title,
+#movies-title,
+#tv-title,
+#apps-title,
+#popular-games-title {
+  margin: 0;
+  font-size: 1.2em;
+  color: var(--primary-color);
+}
+
+.sub-categories,
+#movies-subtext,
+#tv-subtext,
+#apps-subtext,
+#popular-games-subtext {
+  font-size: 0.9em;
+  color: var(--secondary-color);
+}
+
+/* --------------------------
+   TABLE STYLES
+--------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px;
+}
+
+table thead th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondary-color);
+  padding: 10px 8px;
+  font-size: 13px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: background-color 0.2s ease;
+}
+
+table thead th:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+.separator td {
+  border: none;
+  border-bottom: 2px solid var(--secondary-color);
+  padding: 0;
+}
+
+th,
+td {
+  padding: 6px 8px;
+  text-align: left;
+  border: 1px solid var(--border-color);
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Column Widths */
+.name-header { width: 60%; }
+.se-header { width: 6%; }
+.le-header { width: 6%; }
+table thead th:nth-child(4) { width: 8%; }
+table thead th:nth-child(5) { width: 8%; }
+table thead th:nth-child(6) { width: 8%; }
+
+/* --------------------------
+   NAME COLUMN & TORRENT LINK
+--------------------------- */
+.name-column i {
+  color: var(--icon-color);
+  font-size: 14px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.torrent-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: Consolas, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+  position: relative;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.torrent-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Zebra Striping for Table Rows */
+tbody tr:nth-child(even) {
+  background-color: var(--row-even);
+}
+
+/* --------------------------
+   HEALTH INDICATOR STYLES
+--------------------------- */
+.health-indicator,
+.health-pipe {
+  display: flex;
+  gap: 2px;
+  margin-top: 3px;
+  height: 6px;
+}
+
+.health-indicator .health-bar,
+.health-pipe .segment {
+  flex: 1;
+  height: 6px;
+  background-color: #ddd;
+  border-radius: 1px;
+}
+
+/* Health Classes */
+.health-100 .health-bar {
+  background-color: #28a745;
+}
+.health-75 .health-bar,
+.health-75 .segment:nth-child(-n+3) {
+  background-color: #FFD700;
+}
+.health-75 .health-bar,
+.health-75 .segment:nth-child(n+4) {
+  background-color: #ddd;
+}
+.health-50 .health-bar,
+.health-50 .segment:nth-child(-n+2) {
+  background-color: #FFA500;
+}
+.health-50 .health-bar,
+.health-50 .segment:nth-child(n+3) {
+  background-color: #ddd;
+}
+.health-25 .health-bar,
+.health-25 .segment:nth-child(1) {
+  background-color: #dc3545;
+}
+.health-25 .health-bar,
+.health-25 .segment:nth-child(n+2) {
+  background-color: #ddd;
+}
+.health-0 .health-bar,
+.health-0 .segment {
+  background-color: #ddd;
+}
+
+/* --------------------------
+   RESPONSIVE ADJUSTMENTS
+--------------------------- */
+/* Tablet (<=1024px) */
+@media (max-width: 1024px) {
+  .sub-categories,
+  #movies-subtext,
+  #tv-subtext,
+  #apps-subtext,
+  #popular-games-subtext {
+    display: none;
+  }
+  table th:nth-child(3),
+  table th:nth-child(4),
+  table th:nth-child(6),
+  table td:nth-child(3),
+  table td:nth-child(4),
+  table td:nth-child(6) {
+    display: none;
+  }
+  .name-header { width: 60%; }
+  .se-header { width: 20%; }
+  table thead th:nth-child(5) { width: 20%; }
+}
+
+/* Mobile (<=768px) */
+@media (max-width: 768px) {
+  table {
+    display: table;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tbody {
+    display: table-row-group;
+  }
+  tr {
+    display: table-row;
+  }
+  th, td {
+    display: table-cell;
+  }
+  /* Hide columns: 3 (LE), 4 (Time), 6 (Uploader) */
+  table th:nth-child(3),
+  table th:nth-child(4),
+  table th:nth-child(6),
+  table td:nth-child(3),
+  table td:nth-child(4),
+  table td:nth-child(6) {
+    display: none;
+  }
+}
+
+/* PAGINATION STYLES */
+.pagination {
+  padding: 15px;
+  text-align: center;
+  background: var(--category-header-bg);
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 5px 12px;
+  margin: 0 2px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.pagination a:hover {
+  background: var(--hover-color);
+}
+
+.pagination a.active {
+  background: var(--secondary-color);
+  cursor: default;
+}

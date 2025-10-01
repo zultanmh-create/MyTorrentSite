@@ -1,0 +1,116 @@
+/* --------------------------
+   THEME VARIABLES
+--------------------------- */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #FFA500;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --hover-color: #e59400;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --announcement-bg: #f8f9fa;
+  --announcement-text: #333333;
+  --announcement-accent: #007bff;
+  --announcement-bullet: #dc3545;
+}
+
+.dark-theme {
+  --primary-color: #1a73e8;
+  --secondary-color: #ff9900;
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --hover-color: #ffb733;
+  --border-color: #444444;
+  --shadow-color: rgba(0, 0, 0, 0.7);
+  --announcement-bg: #1a1a1a;
+  --announcement-text: #e0e0e0;
+  --announcement-accent: #4dabf7;
+  --announcement-bullet: #ff6b6b;
+}
+
+/* --------------------------
+   ANNOUNCEMENTS BOX
+--------------------------- */
+.category-box.announcements {
+  background-color: var(--announcement-bg);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--announcement-bg);
+  border-bottom: 2px solid var(--announcement-accent);
+}
+
+.category-header h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: var(--announcement-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.category-header h2::before {
+  content: '📢';
+  font-size: 1.4em;
+}
+
+/* --------------------------
+   ANNOUNCEMENTS LIST
+--------------------------- */
+.category-box.announcements ul {
+  list-style: none;
+  padding: 1.5rem;
+  margin: 0;
+}
+
+.category-box.announcements li {
+  position: relative;
+  padding-left: 2rem;
+  margin: 1rem 0;
+  color: var(--announcement-text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.category-box.announcements li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--announcement-bullet);
+  font-weight: 900;
+  font-size: 1.4em;
+  line-height: 1;
+}
+
+.category-box.announcements li span.emoji {
+  display: inline-block;
+  margin-right: 0.75rem;
+}
+
+/* --------------------------
+   RESPONSIVE DESIGN
+--------------------------- */
+@media (max-width: 768px) {
+  .category-header {
+    padding: 1rem;
+  }
+  
+  .category-box.announcements ul {
+    padding: 1rem;
+  }
+  
+  .category-box.announcements li {
+    padding-left: 1.75rem;
+    font-size: 0.9rem;
+  }
+}

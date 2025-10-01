@@ -1,0 +1,115 @@
+/* news.css */
+/* --------------------------
+   THEME VARIABLES
+--------------------------- */
+:root {
+  --news-bg: #007BFF; /* Bright Blue for Light Theme */
+  --news-text: #ffffff;
+  --news-button-bg: #FFA500;
+  --news-button-hover: #e59400;
+}
+
+.dark-theme {
+  --news-bg: #007BFF; /* Darker Blue for Dark Theme */
+  --news-text: #e0e0e0;
+  --news-button-bg: #ff9900;
+  --news-button-hover: #ffb733;
+}
+
+/* --------------------------
+   NEWS SECTION STYLES
+--------------------------- */
+.news {
+  background-color: var(--news-bg);
+  color: var(--news-text);
+  padding: 12px 20px;
+  overflow: hidden;
+  position: relative;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.news p {
+  margin: 0;
+  white-space: nowrap;
+  position: absolute;
+  animation: scroll-news 25s linear infinite;
+  padding-left: 100%;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+.news p strong {
+  color: var(--news-button-bg);
+  font-weight: 700;
+}
+
+.theme-toggle {
+  background-color: var(--news-button-bg);
+  color: #000;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background-color: var(--news-button-hover);
+}
+
+/* --------------------------
+   SCROLL ANIMATION
+--------------------------- */
+@keyframes scroll-news {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(calc(-100% - 150px));
+  }
+}
+
+/* --------------------------
+   RESPONSIVE DESIGN
+--------------------------- */
+@media (max-width: 768px) {
+  .news {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 15px;
+    min-height: auto;
+  }
+
+  .news p {
+    position: static;
+    animation: scroll-news-mobile 15s linear infinite;
+    padding-left: 100%;
+    margin-bottom: 8px;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @keyframes scroll-news-mobile {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .news:hover p {
+    animation-play-state: paused;
+  }
+}

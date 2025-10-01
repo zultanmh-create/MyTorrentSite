@@ -1,0 +1,74 @@
+/* body.css */
+/* --------------------------
+   THEME VARIABLES
+--------------------------- */
+:root {
+    /* Light Theme */
+    --primary-color: #007BFF;
+    --secondary-color: #FFA500;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --hover-color: #e59400;
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --se-color: #28a745;
+    --le-color: #dc3545;
+    --row-even: #f8f9fa;
+    --icon-color: #007BFF;
+    --sidebar-bg: #f8f9fa;
+    --category-header-bg: #f8f9fa;
+    --table-header-bg: #007BFF;
+    --table-header-text: #ffffff;
+    --sidebar-link-color: #333333;
+    --sidebar-link-hover-color: #007BFF;
+    --mobile-menu-bg: #007BFF;
+  }
+  
+  .dark-theme {
+    /* Dark Theme */
+    --primary-color: #1a73e8;
+    --secondary-color: #ff9900;
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --hover-color: #ffb733;
+    --border-color: #444444;
+    --shadow-color: rgba(0, 0, 0, 0.7);
+    --row-even: #1a1a1a;
+    --icon-color: #ff9900;
+    --sidebar-bg: #1a1a1a;
+    --category-header-bg: #1a1a1a;
+    --table-header-bg: #1a1a1a;
+    --table-header-text: #ffffff;
+    --sidebar-link-color: #e0e0e0;
+    --sidebar-link-hover-color: #ff9900;
+    --mobile-menu-bg: #1a1a1a;
+  }
+  
+  /* --------------------------
+     GLOBAL STYLES
+  --------------------------- */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: 
+      background-color 0.3s ease, 
+      color 0.3s ease,
+      border-color 0.3s ease;
+  }
+  
+  /* --------------------------
+     FONT DEFINITIONS
+  --------------------------- */
+  /* Default font stack (already included in body styles) */
+  /*
+  Arial is the primary font
+  Fallback to system sans-serif fonts:
+  - Windows: Arial
+  - Mac: Helvetica
+  - Linux: Liberation Sans
+  - Generic: sans-serif
+  */

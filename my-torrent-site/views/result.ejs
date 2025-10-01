@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/body.css">
+  
+  <!-- Component CSS Files -->
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/search-bar.css">
+  <link rel="stylesheet" href="/styles/news.css">
+  <link rel="stylesheet" href="/styles/left&right.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  
+  <!-- JavaScript -->
+  <script defer src="/scripts/script.js"></script>
+  <script defer src="/scripts/update.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <%- include('partials/header.ejs') %>
+
+  
+  <!-- News Section -->
+  <%- include ('partials/news') %>
+
+  <!-- Search Bar -->
+  <%- include ('partials/search-bar') %>
+
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="content-wrapper">
+      
+      <!-- Left Sidebar: Categories -->
+      <%- include ('partials/left-sidebar') %>
+      
+      <!-- Central Content Area -->
+      <div class="content-area">
+        
+        <!-- Announcements Section -->
+        <%- include ('partials/announcements') %>
+        
+        <!-- Popular Movie Torrents Section -->
+        
+        <!-- Content Area -->
+        
+          <section id="games-search-results" class="category-box">
+            <div id="games-header-box" class="category-header">
+              <h2 id="games-title">Search results for "games"</h2>
+            </div>
+            <table id="games-data-table">
+              <thead>
+                <tr>
+                  <th id="games-name-th" class="name-header">Name</th>
+                  <th id="games-se-th" class="se-header">SE</th>
+                  <th id="games-le-th" class="le-header">LE</th>
+                  <th id="games-time-th">Time</th>
+                  <th id="games-size-th">Size</th>
+                  <th id="games-uploader-th">Uploader</th>
+                </tr>
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Row 1 -->
+                <tr id="game-row-1" data-category="game">
+                  <td id="game-name-1" class="name-column">
+                    <i id="game-icon-1" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-1"
+                      href="#"
+                      class="torrent-link"
+                      title="Capcom Arcade Stadium: Packs 1, 2 &amp; 3 [3 Games, MULTi13] (FitGirl Repack)"
+                      >Capcom Arcade Stadium: Packs 1, 2 &amp; 3 [3 Games, MULTi13]
+                      (FitGirl Repack)</a
+                    >
+                  </td>
+                  <td id="game-se-1" class="se">
+                    409
+                    <div id="game-health-1" class="health-pipe health-75">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-1" class="le">70</td>
+                  <td id="game-time-1">May. 26th '21</td>
+                  <td id="game-size-1">1.1 GB</td>
+                  <td id="game-uploader-1">FitGirl</td>
+                </tr>
+                <!-- Row 2 -->
+                <tr id="game-row-2" data-category="game">
+                  <td id="game-name-2" class="name-column">
+                    <i id="game-icon-2" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-2"
+                      href="#"
+                      class="torrent-link"
+                      title='You Have Wait "Those Games," Right? Yes, Let’s See You Clear the M…(FitGirl Repack)'
+                      >You Have Wait "Those Games," Right? Yes, Let’s See You Clear the M…(FitGirl
+                      Repack)</a
+                    >
+                  </td>
+                  <td id="game-se-2" class="se">
+                    291
+                    <div id="game-health-2" class="health-pipe health-50">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-2" class="le">51</td>
+                  <td id="game-time-2">Jul. 24th '21</td>
+                  <td id="game-size-2">22.1 GB</td>
+                  <td id="game-uploader-2">FitGirl</td>
+                </tr>
+                <!-- Row 3 -->
+                <tr id="game-row-3" data-category="game">
+                  <td id="game-name-3" class="name-column">
+                    <i id="game-icon-3" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-3"
+                      href="#"
+                      class="torrent-link"
+                      title="Kirby: The Complete Collection (37 games for 13 platforms, up to … (FitGirl FIXE)"
+                      >Kirby: The Complete Collection (37 games for 13 platforms, up to … (FitGirl
+                      FIXE</a
+                    >
+                  </td>
+                  <td id="game-se-3" class="se">
+                    155
+                    <div id="game-health-3" class="health-pipe health-25">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-3" class="le">37</td>
+                  <td id="game-time-3">Jun. 25th '21</td>
+                  <td id="game-size-3">11.7 GB</td>
+                  <td id="game-uploader-3">FitGirl</td>
+                </tr>
+                <!-- Row 4 -->
+                <tr id="game-row-4" data-category="game">
+                  <td id="game-name-4" class="name-column">
+                    <i id="game-icon-4" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-4"
+                      href="#"
+                      class="torrent-link"
+                      title="Mass Effect 2 DDE All DLCs Repack RG Games NASWARi-ZOHAiB"
+                      >Mass Effect 2 DDE All DLCs Repack RG Games NASWARi-ZOHAiB</a
+                    >
+                  </td>
+                  <td id="game-se-4" class="se">
+                    94
+                    <div id="game-health-4" class="health-pipe health-25">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-4" class="le">31</td>
+                  <td id="game-time-4">Feb. 2nd '21</td>
+                  <td id="game-size-4">5.3 GB</td>
+                  <td id="game-uploader-4">Zohaib420</td>
+                </tr>
+                <!-- Row 5 -->
+                <tr id="game-row-5" data-category="game">
+                  <td id="game-name-5" class="name-column">
+                    <i id="game-icon-5" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-5"
+                      href="#"
+                      class="torrent-link"
+                      title="Olympic Games Tokyo 2022: The Official Video Game (+ Multiplayer, MULTi12) [FitGirl Repack]"
+                      >Olympic Games Tokyo 2022: The Official Video Game (+ Multiplayer,
+                      MULTi12) [FitGirl Repack]</a
+                    >
+                  </td>
+                  <td id="game-se-5" class="se">
+                    59
+                    <div id="game-health-5" class="health-pipe health-25">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-5" class="le">20</td>
+                  <td id="game-time-5">Jul. 26th '21</td>
+                  <td id="game-size-5">3.6 GB</td>
+                  <td id="game-uploader-5">FitGirl</td>
+                </tr>
+                <!-- Row 6 -->
+                <tr id="game-row-6" data-category="game">
+                  <td id="game-name-6" class="name-column">
+                    <i id="game-icon-6" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-6"
+                      href="#"
+                      class="torrent-link"
+                      title="Halo: The Master Chief Collection (v1.0 + DLC + MULTi13) [FitGirl Repack]"
+                      >Halo: The Master Chief Collection (v1.0 + DLC + MULTi13)
+                      [FitGirl Repack]</a
+                    >
+                  </td>
+                  <td id="game-se-6" class="se">
+                    29
+                    <div id="game-health-6" class="health-pipe health-0">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-6" class="le">7</td>
+                  <td id="game-time-6">Jul. 24th '21</td>
+                  <td id="game-size-6">62.9 GB</td>
+                  <td id="game-uploader-6">FitGirl</td>
+                </tr>
+                <!-- Row 7 -->
+                <tr id="game-row-7" data-category="game">
+                  <td id="game-name-7" class="name-column">
+                    <i id="game-icon-7" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-7"
+                      href="#"
+                      class="torrent-link"
+                      title="Halo: The Master Chief Collection (v2.0 + DLC + MULTi13) [FitGirl Repack]"
+                      >Halo: The Master Chief Collection (v2.0 + DLC + MULTi13)
+                      [FitGirl Repack]</a
+                    >
+                  </td>
+                  <td id="game-se-7" class="se">
+                    24
+                    <div id="game-health-7" class="health-pipe health-0">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-7" class="le">3</td>
+                  <td id="game-time-7">Jun. 21st '21</td>
+                  <td id="game-size-7">62.7 GB</td>
+                  <td id="game-uploader-7">FitGirl</td>
+                </tr>
+                <!-- Row 8 -->
+                <tr id="game-row-8" data-category="game">
+                  <td id="game-name-8" class="name-column">
+                    <i id="game-icon-8" class="fas fa-gamepad"></i>
+                    <a
+                      id="game-link-8"
+                      href="#"
+                      class="torrent-link"
+                      title="Mass Effect Legendary Edition (v1.0.0.700 + All DLCs + MULTi12) [FitGirl Repack]"
+                      >Mass Effect Legendary Edition (v1.0.0.700 + All DLCs + MULTi12)
+                      [FitGirl Repack]</a
+                    >
+                  </td>
+                  <td id="game-se-8" class="se">
+                    19
+                    <div id="game-health-8" class="health-pipe health-0">
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                      <div class="segment"></div>
+                    </div>
+                  </td>
+                  <td id="game-le-8" class="le">4</td>
+                  <td id="game-time-8">Aug. 1st '21</td>
+                  <td id="game-size-8">94.2 GB</td>
+                  <td id="game-uploader-8">FitGirl</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="games-pagination" class="pagination">
+              <a id="games-prev" href="#">«</a>
+              <a id="games-page1" class="active" href="#">1</a>
+              <a id="games-page2" href="#">2</a>
+              <a id="games-page3" href="#">3</a>
+              <a id="games-next" href="#">»</a>
+            </div>
+          </section>
+        
+
+        
+        <!-- Other sections... -->
+        
+      </div>
+      
+      <!-- Right Sidebar: Quick Links -->
+      <%- include ('partials/quick-links') %>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <%- include ('partials/footer') %>
+
+  <script src="/public/scripts/script.js"></script>
+
+</body>
+</html>

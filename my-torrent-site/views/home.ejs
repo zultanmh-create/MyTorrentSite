@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/body.css">
+  
+  <!-- Component CSS Files -->
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/search-bar.css">
+  <link rel="stylesheet" href="/styles/news.css">
+  <link rel="stylesheet" href="/styles/left&right.css">
+  <link rel="stylesheet" href="/styles/announcements.css">
+  <link rel="stylesheet" href="/styles/seeders.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  
+  <!-- JavaScript -->
+  <script defer src="/scripts/script.js"></script>
+  <script defer src="/scripts/healthLogic.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <%- include('partials/header.ejs') %>
+
+
+  <!-- Search Bar -->
+  <%- include ('partials/search-bar') %>
+
+  <!-- News Section -->
+  <%- include ('partials/news') %>
+
+  <!-- Main Content Area -->
+  <main>
+    <div class="content-wrapper">
+      
+      <!-- Left Sidebar: Categories -->
+      <%- include ('partials/left-sidebar') %>
+      
+      <!-- Central Content Area -->
+      <div class="content-area">
+        
+        <!-- Announcements Section -->
+        <%- include ('partials/announcements') %>
+        
+        
+          <!-- Popular Movie Torrents Section -->
+          <section id="popular-movies" class="category-box">
+            <div id="movies-header-box" class="category-header">
+              <h2 id="movies-title">POPULAR MOVIE TORRENTS</h2>
+              <div id="movies-subtext" class="sub-categories">
+                POPULAR THIS WEEK | TRENDING THIS WEEK
+              </div>
+            </div>
+            <table id="movies-data-table">
+              <thead>
+                <tr>
+                  <th id="movies-name-th" class="name-header">Name</th>
+                  <th id="movies-se-th" class="se-header">SE</th>
+                  <th id="movies-le-th" class="le-header">LE</th>
+                  <th id="movies-time-th">Time</th>
+                  <th id="movies-size-th">Size</th>
+                  <th id="movies-uploader-th">Uploader</th>
+                </tr>
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="movie-row-1" data-category="movie">
+                  <td id="movie-name-1" class="name-column">
+                    <i id="movie-icon-1" class="fas fa-film"></i>
+                    <a
+                      id="movie-link-1"
+                      href="#"
+                      class="torrent-link"
+                      title="The.Witcher.Sirens.of.the.Deep.2025.1080p.NF.WEB-DL.AAC5.1.H.265-HDRush"
+                      >The.Witcher.Sirens.of.the.Deep.2025.1080p.NF.WEB-DL.AAC5.1.H.265-HDRush</a
+                    >
+                  </td>
+                  <td id="movie-se-1" class="se">
+                    1203
+                    <div id="movie-health-1" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="movie-le-1" class="le">318</td>
+                  <td id="movie-time-1">9am Feb. 11th</td>
+                  <td id="movie-size-1">951.0 MB</td>
+                  <td id="movie-uploader-1">IONICBOII</td>
+                </tr>
+                <tr id="movie-row-2" data-category="movie">
+                  <td id="movie-name-2" class="name-column">
+                    <i id="movie-icon-2" class="fas fa-film"></i>
+                    <a
+                      id="movie-link-2"
+                      href="#"
+                      class="torrent-link"
+                      title="Dune.Part.Two.2024.2160p.WEB-DL.DDP5.1.Atmos.HDR.H.265-FLUX"
+                      >Dune.Part.Two.2024.2160p.WEB-DL.DDP5.1.Atmos.HDR.H.265-FLUX</a
+                    >
+                  </td>
+                  <td id="movie-se-2" class="se">
+                    984
+                    <div id="movie-health-2" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="movie-le-2" class="le">245</td>
+                  <td id="movie-time-2">8pm Feb. 10th</td>
+                  <td id="movie-size-2">4.2 GB</td>
+                  <td id="movie-uploader-2">MovieMaster</td>
+                </tr>
+                <tr id="movie-row-3" data-category="movie">
+                  <td id="movie-name-3" class="name-column">
+                    <i id="movie-icon-3" class="fas fa-film"></i>
+                    <a
+                      id="movie-link-3"
+                      href="#"
+                      class="torrent-link"
+                      title="Oppenheimer.2023.1080p.BluRay.x264.DTS-HD.MA.5.1-FLAME"
+                      >Oppenheimer.2023.1080p.BluRay.x264.DTS-HD.MA.5.1-FLAME</a
+                    >
+                  </td>
+                  <td id="movie-se-3" class="se">
+                    765
+                    <div id="movie-health-3" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="movie-le-3" class="le">198</td>
+                  <td id="movie-time-3">3pm Feb. 9th</td>
+                  <td id="movie-size-3">2.8 GB</td>
+                  <td id="movie-uploader-3">CinemaPro</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Popular TV Torrents Section -->
+          <section id="popular-tv" class="category-box">
+            <div id="tv-header-box" class="category-header">
+              <h2 id="tv-title">POPULAR TV TORRENTS</h2>
+              <div id="tv-subtext" class="sub-categories">
+                POPULAR THIS WEEK | TRENDING THIS WEEK
+              </div>
+            </div>
+            <table id="tv-data-table">
+              <thead>
+                <tr>
+                  <th id="tv-name-th" class="name-header">Name</th>
+                  <th id="tv-se-th" class="se-header">SE</th>
+                  <th id="tv-le-th" class="le-header">LE</th>
+                  <th id="tv-time-th">Time</th>
+                  <th id="tv-size-th">Size</th>
+                  <th id="tv-uploader-th">Uploader</th>
+                </tr>
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="tv-row-1" data-category="tv">
+                  <td id="tv-name-1" class="name-column">
+                    <i id="tv-icon-1" class="fas fa-tv"></i>
+                    <a
+                      id="tv-link-1"
+                      href="#"
+                      class="torrent-link"
+                      title="The Rookie S07E06 The Gala 1080p AMZN WEB-DL DDP5 1 H 264-FLUX[TGx]"
+                      >The Rookie S07E06 The Gala 1080p AMZN WEB-DL DDP5 1 H 264-FLUX[TGx]</a
+                    >
+                  </td>
+                  <td id="tv-se-1" class="se">
+                    1712
+                    <div id="tv-health-1" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="tv-le-1" class="le">455</td>
+                  <td id="tv-time-1">5:48am</td>
+                  <td id="tv-size-1">3.1 GB</td>
+                  <td id="tv-uploader-1">TGxGoodies</td>
+                </tr>
+                <tr id="tv-row-2" data-category="tv">
+                  <td id="tv-name-2" class="name-column">
+                    <i id="tv-icon-2" class="fas fa-tv"></i>
+                    <a
+                      id="tv-link-2"
+                      href="#"
+                      class="torrent-link"
+                      title="True.Detective.S04E05.1080p.WEB.H264-Exclusive"
+                      >True.Detective.S04E05.1080p.WEB.H264-Exclusive</a
+                    >
+                  </td>
+                  <td id="tv-se-2" class="se">
+                    1321
+                    <div id="tv-health-2" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="tv-le-2" class="le">321</td>
+                  <td id="tv-time-2">2:15am</td>
+                  <td id="tv-size-2">1.9 GB</td>
+                  <td id="tv-uploader-2">TVMaster</td>
+                </tr>
+                <tr id="tv-row-3" data-category="tv">
+                  <td id="tv-name-3" class="name-column">
+                    <i id="tv-icon-3" class="fas fa-tv"></i>
+                    <a
+                      id="tv-link-3"
+                      href="#"
+                      class="torrent-link"
+                      title="The.Mandalorian.S03E09.1080p.WEB-DL.DDP5.1.H.264-FLUX"
+                      >The.Mandalorian.S03E09.1080p.WEB-DL.DDP5.1.H.264-FLUX</a
+                    >
+                  </td>
+                  <td id="tv-se-3" class="se">
+                    987
+                    <div id="tv-health-3" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="tv-le-3" class="le">287</td>
+                  <td id="tv-time-3">9pm Feb. 8th</td>
+                  <td id="tv-size-3">2.5 GB</td>
+                  <td id="tv-uploader-3">DisneyPlusRips</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Popular Application Torrents Section -->
+          <section id="popular-apps" class="category-box">
+            <div id="apps-header-box" class="category-header">
+              <h2 id="apps-title">POPULAR APPLICATION TORRENTS</h2>
+              <div id="apps-subtext" class="sub-categories">
+                POPULAR THIS WEEK | TRENDING THIS WEEK
+              </div>
+            </div>
+            <table id="apps-data-table">
+              <thead>
+                <tr>
+                  <th id="apps-name-th" class="name-header">Name</th>
+                  <th id="apps-se-th" class="se-header">SE</th>
+                  <th id="apps-le-th" class="le-header">LE</th>
+                  <th id="apps-time-th">Time</th>
+                  <th id="apps-size-th">Size</th>
+                  <th id="apps-uploader-th">Uploader</th>
+                </tr>
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="app-row-1" data-category="application">
+                  <td id="app-name-1" class="name-column">
+                    <i id="app-icon-1" class="fas fa-window-restore"></i>
+                    <a
+                      id="app-link-1"
+                      href="#"
+                      class="torrent-link"
+                      title="Adobe.Photoshop.2024.v25.5.0.375.Multilingual.Pre-activated"
+                      >Adobe.Photoshop.2024.v25.5.0.375.Multilingual.Pre-activated</a
+                    >
+                  </td>
+                  <td id="app-se-1" class="se">
+                    845
+                    <div id="app-health-1" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="app-le-1" class="le">145</td>
+                  <td id="app-time-1">11:30am</td>
+                  <td id="app-size-1">2.8 GB</td>
+                  <td id="app-uploader-1">SoftPro</td>
+                </tr>
+                <tr id="app-row-2" data-category="application">
+                  <td id="app-name-2" class="name-column">
+                    <i id="app-icon-2" class="fas fa-window-restore"></i>
+                    <a
+                      id="app-link-2"
+                      href="#"
+                      class="torrent-link"
+                      title="Microsoft.Office.2021.Pro.Plus.Lifetime.Activated"
+                      >Microsoft.Office.2021.Pro.Plus.Lifetime.Activated</a
+                    >
+                  </td>
+                  <td id="app-se-2" class="se">
+                    721
+                    <div id="app-health-2" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="app-le-2" class="le">5000</td>
+                  <td id="app-time-2">9:15am</td>
+                  <td id="app-size-2">4.5 GB</td>
+                  <td id="app-uploader-2">OfficeKing</td>
+                </tr>
+                <tr id="app-row-3" data-category="application">
+                  <td id="app-name-3" class="name-column">
+                    <i id="app-icon-3" class="fas fa-window-restore"></i>
+                    <a
+                      id="app-link-3"
+                      href="#"
+                      class="torrent-link"
+                      title="AutoCAD.2025.x64.Multilingual.Pre-activated"
+                      >AutoCAD.2025.x64.Multilingual.Pre-activated</a
+                    >
+                  </td>
+                  <td id="app-se-3" class="se">
+                    654
+                    <div id="app-health-3" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="app-le-3" class="le">700</td>
+                  <td id="app-time-3">7:00am</td>
+                  <td id="app-size-3">3.2 GB</td>
+                  <td id="app-uploader-3">CADMaster</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Popular Game Torrents Section -->
+          <section id="popular-games" class="category-box">
+            <div id="games-section-header" class="category-header">
+              <h2 id="popular-games-title">POPULAR GAME TORRENTS</h2>
+              <div id="popular-games-subtext" class="sub-categories">
+                POPULAR THIS WEEK | TRENDING THIS WEEK
+              </div>
+            </div>
+            <table id="popular-games-data-table">
+              <thead>
+                <tr>
+                  <th id="popular-games-name-th" class="name-header">Name</th>
+                  <th id="popular-games-se-th" class="se-header">SE</th>
+                  <th id="popular-games-le-th" class="le-header">LE</th>
+                  <th id="popular-games-time-th">Time</th>
+                  <th id="popular-games-size-th">Size</th>
+                  <th id="popular-games-uploader-th">Uploader</th>
+                </tr>
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="pgame-row-1" data-category="game">
+                  <td id="pgame-name-1" class="name-column">
+                    <i id="pgame-icon-1" class="fas fa-gamepad"></i>
+                    <a
+                      id="pgame-link-1"
+                      href="#"
+                      class="torrent-link"
+                      title="Cyberpunk.2077.Ultimate.Edition.v2.11-CODEX"
+                      >Cyberpunk.2077.Ultimate.Edition.v2.11-CODEX</a
+                    >
+                  </td>
+                  <td id="pgame-se-1" class="se">
+                    1543
+                    <div id="pgame-health-1" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="pgame-le-1" class="le">4000</td>
+                  <td id="pgame-time-1">6:00pm</td>
+                  <td id="pgame-size-1">68.4 GB</td>
+                  <td id="pgame-uploader-1">GameLord</td>
+                </tr>
+                <tr id="pgame-row-2" data-category="game">
+                  <td id="pgame-name-2" class="name-column">
+                    <i id="pgame-icon-2" class="fas fa-gamepad"></i>
+                    <a
+                      id="pgame-link-2"
+                      href="#"
+                      class="torrent-link"
+                      title="Hogwarts.Legacy.Deluxe.Edition.v1126182-EMPRESS"
+                      >Hogwarts.Legacy.Deluxe.Edition.v1126182-EMPRESS</a
+                    >
+                  </td>
+                  <td id="pgame-se-2" class="se">
+                    1321
+                    <div id="pgame-health-2" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="pgame-le-2" class="le">1000</td>
+                  <td id="pgame-time-2">4:30pm</td>
+                  <td id="pgame-size-2">73.5 GB</td>
+                  <td id="pgame-uploader-2">MagicUploader</td>
+                </tr>
+                <tr id="pgame-row-3" data-category="game">
+                  <td id="pgame-name-3" class="name-column">
+                    <i id="pgame-icon-3" class="fas fa-gamepad"></i>
+                    <a
+                      id="pgame-link-3"
+                      href="#"
+                      class="torrent-link"
+                      title="Elden.Ring.Shadow.of.the.Erdtree.v1.12-CODEX"
+                      >Elden.Ring.Shadow.of.the.Erdtree.v1.12-CODEX</a
+                    >
+                  </td>
+                  <td id="pgame-se-3" class="se">
+                    1124
+                    <div id="pgame-health-3" class="health-indicator">
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                      <div class="health-bar"></div>
+                    </div>
+                  </td>
+                  <td id="pgame-le-3" class="le">287</td>
+                  <td id="pgame-time-3">2:00pm</td>
+                  <td id="pgame-size-3">48.2 GB</td>
+                  <td id="pgame-uploader-3">DarkSoulsFan</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        
+
+          
+        <!-- Other sections... -->
+        
+        <!-- Top Seeders Section -->
+        <%- include('partials/seeders.ejs') %>
+      </div>
+      
+      <!-- Right Sidebar: Quick Links -->
+      <%- include ('partials/quick-links') %>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <%- include ('partials/footer') %>
+
+  <script src="/public/scripts/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* --------------------------
+   THEME VARIABLES
+--------------------------- */
+/* Light Theme (default) */
+:root {
+    --ts-bg-color: #ffffff;
+    --ts-text-color: #333333;
+    --ts-header-bg: #f8f9fa;
+    --ts-primary-color: #007BFF;
+    --ts-shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Dark Theme Overrides */
+  .dark-theme {
+    --ts-bg-color: #121212;
+    --ts-text-color: #e0e0e0;
+    --ts-header-bg: #1a1a1a;
+    --ts-primary-color: #1a73e8;
+    --ts-shadow-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* --------------------------
+     TOP SEEDERS SECTION
+  --------------------------- */
+  #top-seeders-section {
+    background: var(--ts-bg-color);
+    color: var(--ts-text-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--ts-shadow-color);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  #top-seeders-header {
+    background-color: var(--ts-header-bg);
+    border-bottom: 2px solid var(--ts-primary-color);
+    padding: 15px;
+  }
+  
+  #top-seeders-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: var(--ts-primary-color);
+  }
+  
+  #top-seeders-list {
+    list-style: decimal inside;
+    margin: 0;
+    padding: 15px;
+  }
+  
+  #top-seeders-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  /* --------------------------
+     RESPONSIVE ADJUSTMENTS
+  --------------------------- */
+  @media (max-width: 768px) {
+    #top-seeders-list li {
+      font-size: 12px;
+    }
+  }
+  
