@@ -1,0 +1,123 @@
+/* search-bar.css */
+/* --------------------------
+   THEME VARIABLES
+--------------------------- */
+:root {
+  /* Light Theme */
+  --search-bg: #ffffff;
+  --search-border: #ced4da;
+  --search-text: #495057;
+  --search-focus: rgba(255, 165, 0, 0.25);
+}
+
+.dark-theme {
+  /* Dark Theme */
+  --search-bg: #2d2d2d;
+  --search-border: #404040;
+  --search-text: #e0e0e0;
+  --search-focus: rgba(255, 165, 0, 0.3);
+}
+
+/* --------------------------
+   SEARCH BAR STYLES
+--------------------------- */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-bar select,
+.search-bar input,
+.search-bar button {
+  padding: 12px 15px;
+  border: 2px solid var(--search-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--search-bg);
+  color: var(--search-text);
+}
+
+.search-bar select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.search-bar input {
+  flex: 1;
+}
+
+.search-bar input::placeholder {
+  color: var(--search-text);
+  opacity: 0.7;
+}
+
+.search-bar button {
+  background-color: #FFA500;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.search-bar button:hover {
+  background-color: #e59400;
+}
+
+/* Focus States */
+.search-bar select:focus,
+.search-bar input:focus {
+  outline: none;
+  border-color: #FFA500;
+  box-shadow: 0 0 0 3px var(--search-focus);
+}
+
+/* --------------------------
+   MOBILE VIEW ADJUSTMENTS
+--------------------------- */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .search-bar select {
+    width: 35%;
+    min-width: 120px;
+    flex: 0 0 auto;
+  }
+
+  .search-bar input {
+    width: 65%;
+    flex: 1;
+  }
+
+  .search-bar button {
+    width: 100%;
+    order: 3; /* Move button to new line */
+    margin-top: 10px;
+    padding: 14px;
+  }
+}
+
+/* --------------------------
+   DESKTOP OPTIMIZATIONS
+--------------------------- */
+@media (min-width: 769px) {
+  .search-bar button {
+    padding: 12px 30px;
+    transition: transform 0.2s ease;
+  }
+
+  .search-bar button:hover {
+    transform: translateY(-1px);
+  }
+}
